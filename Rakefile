@@ -7,11 +7,13 @@ require_relative 'lib/students_importer'
 desc "create the database"
 task "db:create" do
   touch 'db/ar-students.sqlite3'
+  touch 'db/ar-teachers.sqlite3'
 end
 
 desc "drop the database"
 task "db:drop" do
   rm_f 'db/ar-students.sqlite3'
+  rm_f 'db/ar-teachers.sqlite3'
 end
 
 desc "migrate the database (options: VERSION=x, VERBOSE=false, SCOPE=blog)."
